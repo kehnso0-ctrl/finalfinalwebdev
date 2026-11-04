@@ -1,0 +1,6 @@
+{
+  "name": "NexusArena - University Esports & Tech Events Platform",
+  "description": "Event management and ticket reservation platform for university student organizations, featuring collegiate esports tournaments, tech hackathons, and departmental seminars.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

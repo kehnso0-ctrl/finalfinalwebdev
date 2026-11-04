@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Student Account | NexusArena Campus Events</title>
+    <meta name="description" content="Register your university student account to participate in collegiate esports tournaments and tech workshops." />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Top Bar Navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">N</div>
+          <span>NexusArena</span>
+          <span class="brand-badge">Campus</span>
+        </a>
+
+        <nav class="site-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="events.html" class="nav-link">Events & Tickets</a>
+          <a href="details.html?id=valorant-collegiate-championship" class="nav-link">Featured Event</a>
+          <a href="contact.html" class="nav-link">Contact & Register</a>
+        </nav>
+
+        <div class="header-actions">
+          <div id="headerAuth" style="display: flex; align-items: center; gap: 0.5rem;">
+            <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+            <a href="signup.html" class="btn btn-primary btn-sm active" style="border-color: var(--accent-primary);">Sign Up</a>
+          </div>
+          <button id="mobileMenuToggle" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileNav" class="mobile-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="events.html" class="nav-link">Events & Tournaments</a>
+      <a href="details.html?id=valorant-collegiate-championship" class="nav-link">Tournament Details</a>
+      <a href="contact.html" class="nav-link">Contact & Registration</a>
+      <a href="login.html" class="nav-link">Sign In</a>
+      <a href="signup.html" class="nav-link active">Sign Up</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="auth-wrapper">
+        <div class="auth-card" style="max-width: 500px;">
+          <!-- Auth Header -->
+          <div class="auth-header">
+            <div class="brand-icon" style="margin: 0 auto 1rem; width: 36px; height: 36px; font-size: 1rem;">N</div>
+            <h1 class="auth-title">Create Student Account</h1>
+            <p class="auth-subtitle">Join the university esports federation and tech guilds</p>
+          </div>
+
+          <!-- Success Alert -->
+          <div id="signupSuccessAlert" class="alert alert-success" style="display: none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div style="font-size: 0.85rem;">
+              <strong>Account Created Successfully!</strong> Welcome, <span id="signupSuccessName"></span>. Preparing your pass dashboard...
+            </div>
+          </div>
+
+          <!-- Sign Up Form -->
+          <form id="signupForm" novalidate>
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="signupFullName" class="form-label">Full Name <span class="required">*</span></label>
+              <input 
+                type="text" 
+                id="signupFullName" 
+                class="form-input" 
+                placeholder="e.g., Jordan Lee or Alex Rivera" 
+                required 
+                autocomplete="name"
+              />
+              <span id="signupFullNameError" class="form-error" style="display: none;"></span>
+            </div>
+
+            <!-- Username -->
+            <div class="form-group">
+              <label for="signupUsername" class="form-label">Desired Username <span class="required">*</span></label>
+              <input 
+                type="text" 
+                id="signupUsername" 
+                class="form-input" 
+                placeholder="e.g., jordan_gamer or jlee2026" 
+                required 
+                autocomplete="username"
+              />
+              <span id="signupUsernameError" class="form-error" style="display: none;"></span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+              <label for="signupEmail" class="form-label">University Email Address <span class="required">*</span></label>
+              <input 
+                type="email" 
+                id="signupEmail" 
+                class="form-input" 
+                placeholder="e.g., jlee@campus.edu" 
+                required 
+                autocomplete="email"
+              />
+              <span id="signupEmailError" class="form-error" style="display: none;"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label for="signupPassword" class="form-label">Account Password <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <input 
+                  type="password" 
+                  id="signupPassword" 
+                  class="form-input" 
+                  placeholder="Minimum 6 characters" 
+                  required 
+                  autocomplete="new-password"
+                />
+                <button type="button" class="input-addon-right toggle-password-btn" data-target="signupPassword" aria-label="Show password">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+              <span id="signupPasswordError" class="form-error" style="display: none;"></span>
+            </div>
+
+            <!-- Confirm Password (CRITICAL: Validated to match password perfectly) -->
+            <div class="form-group">
+              <label for="signupConfirmPassword" class="form-label">Confirm Password <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <input 
+                  type="password" 
+                  id="signupConfirmPassword" 
+                  class="form-input" 
+                  placeholder="Re-type password exactly" 
+                  required 
+                  autocomplete="new-password"
+                />
+                <button type="button" class="input-addon-right toggle-password-btn" data-target="signupConfirmPassword" aria-label="Show password">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+              <!-- Live Match Feedback -->
+              <div id="passwordMatchIndicator" class="match-indicator"></div>
+              <span id="signupConfirmPasswordError" class="form-error" style="display: none;"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="signupSubmitBtn" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.75rem;">
+              Complete Registration
+            </button>
+          </form>
+
+          <!-- Bottom Link to Login -->
+          <div style="text-align: center; margin-top: 1.75rem; font-size: 0.875rem; color: var(--text-secondary);">
+            Already have an active campus account? <a href="login.html" style="color: var(--accent-cyan); font-weight: 600;">Sign in here</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+          <div>© <span id="currentYear">2026</span> NexusArena University Platform.</div>
+          <div style="display: flex; gap: 1.5rem;">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="events.html" class="footer-link">Events</a>
+            <a href="login.html" class="footer-link">Sign In</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

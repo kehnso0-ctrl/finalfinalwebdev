@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusArena | University Esports & Tech Events Platform</title>
+    <meta name="description" content="Official event management and ticket reservation platform for university student organizations, collegiate esports championships, and tech seminars." />
+    <meta property="og:title" content="NexusArena | University Esports & Tech Events" />
+    <meta property="og:description" content="Campus event management, collegiate esports tournaments, and tech workshops with live ticket reservations." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Top Bar Navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <!-- Zone 1: Single text element wordmark -->
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">N</div>
+          <span>NexusArena</span>
+          <span class="brand-badge">Campus</span>
+        </a>
+
+        <!-- Zone 2: 4-5 clean single-line text links -->
+        <nav class="site-nav">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="events.html" class="nav-link">Events & Tickets</a>
+          <a href="details.html?id=valorant-collegiate-championship" class="nav-link">Featured Event</a>
+          <a href="contact.html" class="nav-link">Contact & Register</a>
+        </nav>
+
+        <!-- Zone 3: Primary action / Auth Lockup -->
+        <div class="header-actions">
+          <div id="headerAuth" style="display: flex; align-items: center; gap: 0.5rem;">
+            <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+            <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+          </div>
+          <button id="mobileMenuToggle" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobileNav" class="mobile-nav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="events.html" class="nav-link">Events & Tournaments</a>
+      <a href="details.html?id=valorant-collegiate-championship" class="nav-link">Tournament Details</a>
+      <a href="contact.html" class="nav-link">Contact & Registration</a>
+      <a href="login.html" class="nav-link">Sign In</a>
+      <a href="signup.html" class="nav-link">Sign Up</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Banner Section -->
+      <section style="margin-bottom: 4rem;">
+        <div class="container">
+          <div class="card" style="position: relative; overflow: hidden; border-radius: var(--radius-xl); border: 1px solid var(--border-medium);">
+            <div style="position: relative; min-height: 480px; display: flex; align-items: center;">
+              <img 
+                src="/assets/images/hero_arena.jpg" 
+                alt="Collegiate Esports Arena Stage" 
+                style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.45);"
+              />
+              <div style="position: relative; z-index: 2; padding: clamp(2rem, 5vw, 4rem); max-width: 780px;">
+                <div class="metadata-row" style="margin-bottom: 1rem;">
+                  <span class="category-kicker esports">Collegiate Esports & Tech League</span>
+                  <span class="metadata-separator">·</span>
+                  <span style="color: #ffffff;">Fall Season 2026</span>
+                </div>
+                <h1 style="color: #ffffff; margin-bottom: 1.25rem;">
+                  Where Campus Champions Compete & Innovate
+                </h1>
+                <p style="color: #d4d4d4; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+                  The premier campus hub uniting collegiate esports tournaments, 36-hour departmental hackathons, and executive technology masterclasses. Reserve squad passes, view brackets, and lead your faculty to victory.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                  <a href="events.html" class="btn btn-primary btn-lg">Explore Upcoming Events →</a>
+                  <a href="about.html" class="btn btn-secondary btn-lg">Our Mission & Guilds</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Platform Metrics -->
+      <section style="margin-bottom: 4.5rem;">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+            <div class="card card-body">
+              <div class="metadata-row" style="margin-bottom: 0.35rem;">
+                <span class="category-kicker esports">Tournament Play</span>
+              </div>
+              <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.25rem;">16+</div>
+              <p style="font-size: 0.85rem; margin: 0;">Collegiate esports tournaments hosted across Valorant, LoL, & Rocket League.</p>
+            </div>
+            <div class="card card-body">
+              <div class="metadata-row" style="margin-bottom: 0.35rem;">
+                <span class="category-kicker tech">Departmental Code</span>
+              </div>
+              <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.25rem;">$6,500</div>
+              <p style="font-size: 0.85rem; margin: 0;">Simulated prize pool and incubation grants for campus hackathons.</p>
+            </div>
+            <div class="card card-body">
+              <div class="metadata-row" style="margin-bottom: 0.35rem;">
+                <span class="category-kicker seminars">Academic Seminars</span>
+              </div>
+              <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.25rem;">850+</div>
+              <p style="font-size: 0.85rem; margin: 0;">Student participants engaged in cloud, AI, and cybersecurity keynotes.</p>
+            </div>
+            <div class="card card-body">
+              <div class="metadata-row" style="margin-bottom: 0.35rem;">
+                <span class="category-kicker social">Student Guilds</span>
+              </div>
+              <div style="font-size: 2.25rem; font-weight: 800; font-family: var(--font-mono); color: var(--text-primary); margin-bottom: 0.25rem;">100%</div>
+              <p style="font-size: 0.85rem; margin: 0;">Student-run organizations dedicated to technological innovation and gaming.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Upcoming Events Spotlight -->
+      <section style="margin-bottom: 4.5rem;">
+        <div class="container">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span class="category-kicker esports">Featured Lineup</span>
+              <h2 style="margin-top: 0.35rem;">Upcoming Campus Showcases</h2>
+            </div>
+            <a href="events.html" class="btn btn-outline btn-sm">View Full Catalog (${CAMPUS_EVENTS.length} Events) →</a>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+            <!-- Marquee Event 1 -->
+            <article class="card card-interactive event-card">
+              <div class="event-image-wrap">
+                <img src="/assets/images/event_valorant.jpg" alt="Valorant Collegiate Championship" class="event-image" />
+                <div class="event-fee-badge">$15 / PERSON</div>
+              </div>
+              <div class="event-content">
+                <div class="metadata-row">
+                  <span class="category-kicker esports">Esports Tournament</span>
+                  <span class="metadata-separator">·</span>
+                  <span>November 14, 2026</span>
+                </div>
+                <h3 class="event-title"><a href="details.html?id=valorant-collegiate-championship">Valorant Collegiate Championship 2026</a></h3>
+                <p class="event-desc">The premier 5v5 collegiate tactical shooter tournament. 16 departmental squads battle on stage for trophies, hardware sponsorships, and campus glory.</p>
+                <div class="event-footer">
+                  <span style="font-size: 0.8rem; color: var(--text-secondary);">5 Open Squad Slots</span>
+                  <a href="details.html?id=valorant-collegiate-championship" class="btn btn-outline btn-sm">Reserve Passes →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Marquee Event 2 -->
+            <article class="card card-interactive event-card">
+              <div class="event-image-wrap">
+                <img src="/assets/images/event_hackathon.jpg" alt="Campus Hackathon" class="event-image" />
+                <div class="event-fee-badge free">FREE ENTRY</div>
+              </div>
+              <div class="event-content">
+                <div class="metadata-row">
+                  <span class="category-kicker tech">Tech Hackathon</span>
+                  <span class="metadata-separator">·</span>
+                  <span>November 21-22, 2026</span>
+                </div>
+                <h3 class="event-title"><a href="details.html?id=campus-hackathon-2026">Campus CodeSprint Hackathon 2026</a></h3>
+                <p class="event-desc">36 hours of non-stop building, pizza, mentorship, and tech demos. Build web applications, AI models, or robotics prototypes with hardware kits.</p>
+                <div class="event-footer">
+                  <span style="font-size: 0.8rem; color: var(--text-secondary);">12 Team Slots Open</span>
+                  <a href="details.html?id=campus-hackathon-2026" class="btn btn-outline btn-sm">Reserve Passes →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Marquee Event 3 -->
+            <article class="card card-interactive event-card">
+              <div class="event-image-wrap">
+                <img src="/assets/images/event_cyber.jpg" alt="Cyber Defense Summit" class="event-image" />
+                <div class="event-fee-badge">$5 / PERSON</div>
+              </div>
+              <div class="event-content">
+                <div class="metadata-row">
+                  <span class="category-kicker seminars">Tech Seminar</span>
+                  <span class="metadata-separator">·</span>
+                  <span>November 28, 2026</span>
+                </div>
+                <h3 class="event-title"><a href="details.html?id=cyber-defense-summit">Cyber Defense & AI Architecture Summit</a></h3>
+                <p class="event-desc">Keynote lectures and hands-on defense demonstrations exploring defensive AI, zero-trust campus networks, and cloud security architecture.</p>
+                <div class="event-footer">
+                  <span style="font-size: 0.8rem; color: var(--text-secondary);">31 Seats Open</span>
+                  <a href="details.html?id=cyber-defense-summit" class="btn btn-outline btn-sm">Reserve Passes →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Departmental Highlights Bento Grid -->
+      <section style="margin-bottom: 4rem;">
+        <div class="container">
+          <div style="background-color: var(--bg-card); border: 1px solid var(--border-medium); border-radius: var(--radius-xl); padding: clamp(2rem, 4vw, 3.5rem);">
+            <div style="max-width: 680px; margin-bottom: 2.5rem;">
+              <span class="category-kicker tech">Interactive Ecosystem</span>
+              <h2 style="margin-top: 0.4rem; margin-bottom: 0.75rem;">Engineered for University Student Organizations</h2>
+              <p>NexusArena operates as the digital nerve center for university gaming guilds, ACM chapters, and robotics societies. Explore schedules, calculate squad fees, and validate student passes in one cohesive platform.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.75rem;">
+              <div style="border-top: 1px solid var(--border-medium); padding-top: 1.25rem;">
+                <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 0.35rem;">01. Dynamic Ticket Computation</div>
+                <h4 style="margin-bottom: 0.5rem;">Instant Squad Cost Calculations</h4>
+                <p style="font-size: 0.9rem;">Interactive math models multiply player entry fees, apply collegiate discounts, and tally optional tournament jerseys automatically.</p>
+              </div>
+
+              <div style="border-top: 1px solid var(--border-medium); padding-top: 1.25rem;">
+                <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.35rem;">02. Infinite Scrolling Feed</div>
+                <h4 style="margin-bottom: 0.5rem;">Fluid Event Discovery</h4>
+                <p style="font-size: 0.9rem;">Browse tournaments, guest lectures, and networking nights seamlessly with category filters and high-performance infinite pagination.</p>
+              </div>
+
+              <div style="border-top: 1px solid var(--border-medium); padding-top: 1.25rem;">
+                <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent-emerald); margin-bottom: 0.35rem;">03. Verified Student Accounts</div>
+                <h4 style="margin-bottom: 0.5rem;">Secure Client-Side Simulation</h4>
+                <p style="font-size: 0.9rem;">Experience full login credential validation, strict password matching, and simulated recovery notifications powered by JavaScript.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+              <div class="brand-icon">N</div>
+              <span>NexusArena</span>
+            </a>
+            <p style="font-size: 0.875rem; max-width: 320px; color: var(--text-secondary); margin-bottom: 1rem;">
+              University Event Management and Ticket Reservation platform for campus esports leagues and departmental tech societies.
+            </p>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">
+              Developed for Web Development Final Project · Educational Demonstration
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Main Pages</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home Page</a></li>
+              <li><a href="about.html" class="footer-link">About Organization</a></li>
+              <li><a href="events.html" class="footer-link">Events & Tickets</a></li>
+              <li><a href="details.html?id=valorant-collegiate-championship" class="footer-link">Event Details</a></li>
+              <li><a href="contact.html" class="footer-link">Contact & Registration</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Student Accounts</h4>
+            <ul class="footer-links">
+              <li><a href="login.html" class="footer-link">Member Sign In</a></li>
+              <li><a href="signup.html" class="footer-link">Create Account</a></li>
+              <li><a href="forgot-password.html" class="footer-link">Forgot Password</a></li>
+              <li><a href="contact.html" class="footer-link">Inquiry Desk</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Campus Hub</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+              Student Union Building, Suite 304<br>
+              Collegiate Esports & Tech Complex<br>
+              Campus Hours: 8:00 AM - 10:00 PM EST
+            </p>
+            <div style="font-size: 0.8rem; color: var(--accent-cyan);">
+              Direct Email: contact@campus-arena.edu
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© <span id="currentYear">2026</span> NexusArena University Platform. Strictly HTML5, CSS3, & Vanilla JavaScript.</div>
+          <div style="display: flex; gap: 1.5rem;">
+            <a href="about.html" class="footer-link">Mission & Vision</a>
+            <a href="events.html" class="footer-link">Tournament Rules</a>
+            <a href="contact.html" class="footer-link">Support</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Shared Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

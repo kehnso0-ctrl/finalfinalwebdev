@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Details & Reservation | NexusArena</title>
+    <meta name="description" content="Extended event schedules, competition rules, and interactive ticket cost calculation for campus tournaments and seminars." />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Top Bar Navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">N</div>
+          <span>NexusArena</span>
+          <span class="brand-badge">Campus</span>
+        </a>
+
+        <nav class="site-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="events.html" class="nav-link">Events & Tickets</a>
+          <a href="details.html?id=valorant-collegiate-championship" class="nav-link active">Featured Event</a>
+          <a href="contact.html" class="nav-link">Contact & Register</a>
+        </nav>
+
+        <div class="header-actions">
+          <div id="headerAuth" style="display: flex; align-items: center; gap: 0.5rem;">
+            <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+            <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+          </div>
+          <button id="mobileMenuToggle" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileNav" class="mobile-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="events.html" class="nav-link">Events & Tournaments</a>
+      <a href="details.html?id=valorant-collegiate-championship" class="nav-link active">Tournament Details</a>
+      <a href="contact.html" class="nav-link">Contact & Registration</a>
+      <a href="login.html" class="nav-link">Sign In</a>
+      <a href="signup.html" class="nav-link">Sign Up</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <div class="metadata-row" style="margin-bottom: 1.5rem;">
+          <a href="events.html" style="color: var(--text-secondary);">&larr; Back to Events Catalog</a>
+          <span class="metadata-separator">/</span>
+          <span id="detailsCategoryKicker" class="category-kicker esports">Esports Tournament</span>
+        </div>
+
+        <!-- 2-Column Responsive Layout: Left Details, Right Sticky Ticket Calculator -->
+        <div class="details-layout">
+          <!-- Left Column: Media Hero, Extended Info, Timeline, Rules -->
+          <div>
+            <!-- Hero Visual Area -->
+            <div class="details-hero">
+              <img id="detailsHeroImg" src="/assets/images/event_valorant.jpg" alt="Event Banner" />
+              <div class="details-hero-overlay">
+                <h1 id="detailsTitle" style="color: #ffffff; margin-bottom: 0.5rem;">Event Title</h1>
+                <div class="metadata-row" style="color: #d4d4d4;">
+                  <span id="detailsDate">Date</span>
+                  <span class="metadata-separator">·</span>
+                  <span id="detailsTime">Time</span>
+                  <span class="metadata-separator">·</span>
+                  <span id="detailsVenue">Venue</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Host & Organizer Strip -->
+            <div class="card card-body" style="margin-bottom: 2rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); display: block;">Hosted & Sanctioned By</span>
+                  <strong id="detailsOrganizer" style="font-size: 1.05rem; color: var(--text-primary);">Organizer Name</strong>
+                </div>
+                <a href="contact.html" class="btn btn-outline btn-sm">Ask Organizer a Question</a>
+              </div>
+            </div>
+
+            <!-- Overview Section -->
+            <section style="margin-bottom: 2.5rem;">
+              <h3 style="margin-bottom: 0.85rem;">About This Campus Event</h3>
+              <p id="detailsFullDesc" style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary);">
+                Event description loading...
+              </p>
+            </section>
+
+            <!-- Prize Pool & Awards -->
+            <section class="card card-body" style="background: rgba(245, 158, 11, 0.04); border-color: rgba(245, 158, 11, 0.2); margin-bottom: 2.5rem;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="color: var(--accent-amber); flex-shrink: 0; padding-top: 2px;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                </div>
+                <div>
+                  <h4 style="font-size: 1rem; color: var(--text-primary); margin-bottom: 0.35rem;">Prizes, Certifications & Awards</h4>
+                  <p id="detailsPrizes" style="font-size: 0.95rem; color: var(--accent-amber); font-weight: 600; margin: 0; line-height: 1.5;">
+                    Prize details loading...
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Schedule Timeline -->
+            <section style="margin-bottom: 2.5rem;">
+              <h3 style="margin-bottom: 0.5rem;">Official Event Schedule</h3>
+              <p style="font-size: 0.9rem; margin-bottom: 1.25rem;">All matches and workshops run on Eastern Standard Time.</p>
+              <div id="detailsSchedule" class="schedule-timeline">
+                <!-- Schedule injected dynamically -->
+              </div>
+            </section>
+
+            <!-- Competition & Facility Rules -->
+            <section class="card card-body" style="margin-bottom: 2.5rem;">
+              <h3 style="margin-bottom: 0.85rem;">Eligibility & Regulations</h3>
+              <div id="detailsRules">
+                <!-- Rules injected dynamically -->
+              </div>
+            </section>
+          </div>
+
+          <!-- Right Column: Interactive Ticket Computation Widget -->
+          <aside>
+            <div class="calc-card">
+              <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-bottom: 1.25rem;">
+                <span class="category-kicker tech">Simulated Ticket Calculator</span>
+                <h3 style="margin-top: 0.25rem; font-size: 1.35rem;">Pass Reservation</h3>
+                <div id="calcBaseFeeLabel" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.35rem;">
+                  Base Fee: $0.00
+                </div>
+              </div>
+
+              <!-- Interactive Form Controls for Live Math Computation -->
+              <form id="calculatorForm" onsubmit="return false;">
+                <!-- 1. Pass Tier -->
+                <div class="form-group">
+                  <label for="ticketTierSelect" class="form-label">Select Ticket Tier</label>
+                  <select id="ticketTierSelect" class="form-select">
+                    <option value="standard">Standard Player / Competitor Pass (1.0x)</option>
+                    <option value="vip">VIP Squad Pass + Front Row Gaming Rig (1.5x)</option>
+                    <option value="spectator">Spectator Pass & Stage Gallery (0.5x)</option>
+                  </select>
+                </div>
+
+                <!-- 2. Squad Size / Attendees Counter -->
+                <div class="form-group">
+                  <label class="form-label">Squad Members / Number of Passes</label>
+                  <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span id="teamSizeHint" style="font-size: 0.8rem; color: var(--text-muted);">
+                      Recommended squad size
+                    </span>
+                    <div class="counter-control">
+                      <button type="button" id="decrementTeamBtn" class="counter-btn" aria-label="Decrease members">&minus;</button>
+                      <span id="teamCountDisplay" class="counter-value">1</span>
+                      <button type="button" id="incrementTeamBtn" class="counter-btn" aria-label="Increase members">&plus;</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. Optional Add-ons -->
+                <div class="form-group" style="padding-top: 0.5rem; border-top: 1px solid var(--border-subtle);">
+                  <label class="form-label" style="margin-bottom: 0.65rem;">Optional Tournament Add-ons</label>
+                  
+                  <label style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" id="addonJersey" style="accent-color: var(--accent-primary); width: 16px; height: 16px;" />
+                    <span>Official Campus Esports Jersey & Lanyard (+$15/person)</span>
+                  </label>
+
+                  <label style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; cursor: pointer;">
+                    <input type="checkbox" id="addonCert" style="accent-color: var(--accent-primary); width: 16px; height: 16px;" />
+                    <span>Printed Guild Certificate of Participation (+$5/person)</span>
+                  </label>
+                </div>
+
+                <!-- 4. Collegiate Student Discount -->
+                <div class="form-group" style="padding-top: 0.5rem; border-top: 1px solid var(--border-subtle);">
+                  <label style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: var(--text-primary); cursor: pointer;">
+                    <input type="checkbox" id="studentDiscount" checked style="accent-color: var(--accent-emerald); width: 16px; height: 16px;" />
+                    <span>Active Student Discount applied (15% off base passes)</span>
+                  </label>
+                </div>
+
+                <!-- Computation Breakdown Display (Real-time DOM Calculation) -->
+                <div style="background-color: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; margin: 1.25rem 0;">
+                  <div class="calc-row">
+                    <span>Base Subtotal:</span>
+                    <strong id="calcSubtotal" class="tabular-nums" style="color: var(--text-primary);">$0.00</strong>
+                  </div>
+                  <div id="calcDiscountRow" class="calc-row" style="color: var(--accent-emerald);">
+                    <span>Collegiate 15% Discount:</span>
+                    <strong id="calcDiscountAmount" class="tabular-nums">-$0.00</strong>
+                  </div>
+                  <div id="calcAddonsRow" class="calc-row" style="display: none; color: var(--accent-cyan);">
+                    <span>Add-ons Total:</span>
+                    <strong id="calcAddonsAmount" class="tabular-nums">+$0.00</strong>
+                  </div>
+                  <div class="calc-total">
+                    <span>Simulated Total:</span>
+                    <span id="calcFinalTotal" class="calc-total-amount tabular-nums">$0.00</span>
+                  </div>
+                </div>
+
+                <button type="button" id="btnReserveTickets" class="btn btn-primary btn-block btn-lg">
+                  Confirm Simulated Reservation →
+                </button>
+                <div style="font-size: 0.75rem; text-align: center; color: var(--text-muted); margin-top: 0.75rem;">
+                  Simulated local transaction · No payment gateway or database required
+                </div>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- Simulated Reservation Confirmation Modal -->
+    <div id="reservationModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 id="modalTitle" style="font-size: 1.15rem; color: var(--text-primary);">Reservation Confirmation</h3>
+          <button type="button" id="closeModalBtn" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.5rem; line-height: 1;">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-success" style="margin-bottom: 1rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <div>
+              <strong>Reservation Simulated Successfully!</strong>
+              <div style="font-size: 0.825rem; margin-top: 2px;">Your squad registration code has been generated. Present this pass at the tournament arena check-in desk.</div>
+            </div>
+          </div>
+
+          <div id="modalTicketDetails">
+            <!-- Ticket details injected dynamically by details.js -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="window.print()">Print Simulated Pass</button>
+          <button type="button" id="finishBookingBtn" class="btn btn-primary btn-sm">Done & Back to Schedule</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+              <div class="brand-icon">N</div>
+              <span>NexusArena</span>
+            </a>
+            <p style="font-size: 0.875rem; max-width: 320px; color: var(--text-secondary); margin-bottom: 1rem;">
+              Event details, tournament bracket check-ins, and dynamic ticket fee calculations.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="about.html" class="footer-link">About Organization</a></li>
+              <li><a href="events.html" class="footer-link">Events Catalog</a></li>
+              <li><a href="contact.html" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Account Access</h4>
+            <ul class="footer-links">
+              <li><a href="login.html" class="footer-link">Member Sign In</a></li>
+              <li><a href="signup.html" class="footer-link">Sign Up</a></li>
+              <li><a href="forgot-password.html" class="footer-link">Forgot Password</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Tournament Desk</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+              Check-in begins 30 mins before scheduled stage matches. Student ID mandatory.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© <span id="currentYear">2026</span> NexusArena University Platform.</div>
+          <div style="display: flex; gap: 1.5rem;">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="events.html" class="footer-link">Events</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/details.js"></script>
+  </body>
+</html>

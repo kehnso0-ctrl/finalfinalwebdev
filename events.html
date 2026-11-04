@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Events & Tournaments | NexusArena</title>
+    <meta name="description" content="Browse upcoming university esports tournaments, tech hackathons, and departmental seminars with live ticket reservation." />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Top Bar Navigation -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">N</div>
+          <span>NexusArena</span>
+          <span class="brand-badge">Campus</span>
+        </a>
+
+        <nav class="site-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="events.html" class="nav-link active">Events & Tickets</a>
+          <a href="details.html?id=valorant-collegiate-championship" class="nav-link">Featured Event</a>
+          <a href="contact.html" class="nav-link">Contact & Register</a>
+        </nav>
+
+        <div class="header-actions">
+          <div id="headerAuth" style="display: flex; align-items: center; gap: 0.5rem;">
+            <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+            <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+          </div>
+          <button id="mobileMenuToggle" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileNav" class="mobile-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="events.html" class="nav-link active">Events & Tournaments</a>
+      <a href="details.html?id=valorant-collegiate-championship" class="nav-link">Tournament Details</a>
+      <a href="contact.html" class="nav-link">Contact & Registration</a>
+      <a href="login.html" class="nav-link">Sign In</a>
+      <a href="signup.html" class="nav-link">Sign Up</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Page Title & Intro -->
+        <div style="margin-bottom: 2.5rem;">
+          <div class="metadata-row" style="margin-bottom: 0.5rem;">
+            <span class="category-kicker esports">Official Campus Schedule</span>
+            <span class="metadata-separator">·</span>
+            <span>Fall & Winter 2026/2027</span>
+          </div>
+          <h1 style="margin-bottom: 0.75rem;">Campus Events & Tournament Passes</h1>
+          <p style="font-size: 1.05rem; max-width: 720px;">
+            Reserve player seats, squad registrations, and attendee passes for official collegiate esports tournaments, department code sprints, and cybersecurity seminars.
+          </p>
+        </div>
+
+        <!-- Interactive Control Bar: Category Filters, Search, and Sort -->
+        <div class="card" style="padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; border-color: var(--border-medium);">
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <!-- Category Segmented Control Tabs (Functional buttons with DOM handlers) -->
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+              <div class="filter-tabs" role="tablist" aria-label="Event categories">
+                <button type="button" class="filter-tab active" data-category-filter="all" role="tab">All Events</button>
+                <button type="button" class="filter-tab" data-category-filter="esports" role="tab">Esports Tournaments</button>
+                <button type="button" class="filter-tab" data-category-filter="tech" role="tab">Tech Hackathons</button>
+                <button type="button" class="filter-tab" data-category-filter="seminars" role="tab">Seminars & Talks</button>
+                <button type="button" class="filter-tab" data-category-filter="social" role="tab">Social & LAN Nights</button>
+              </div>
+
+              <div id="eventsCount" style="font-size: 0.85rem; color: var(--text-secondary); font-family: var(--font-mono);">
+                Showing 0 campus events
+              </div>
+            </div>
+
+            <!-- Search Bar & Sorting Controls -->
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;">
+              <div class="input-wrapper">
+                <input 
+                  type="search" 
+                  id="eventSearchInput" 
+                  class="form-input" 
+                  placeholder="Search tournaments, hackathons, organizers, or campus venues..."
+                  aria-label="Search events"
+                />
+                <span class="input-addon-right" style="pointer-events: none;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <label for="eventSortSelect" style="font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap;">Sort by:</label>
+                <select id="eventSortSelect" class="form-select" style="min-width: 170px;">
+                  <option value="date-asc">Upcoming Date</option>
+                  <option value="fee-asc">Entry Fee: Low to High</option>
+                  <option value="fee-desc">Entry Fee: High to Low</option>
+                  <option value="title-asc">Title: A to Z</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Events Feed Grid (Populated dynamically by events.js) -->
+        <section id="eventsGrid" class="events-grid" aria-live="polite">
+          <!-- Dynamic event cards injected via JavaScript -->
+        </section>
+
+        <!-- Infinite Scrolling Trigger & Status Indicator -->
+        <div id="infiniteScrollStatus" class="infinite-scroll-status">
+          <div class="spinner"></div>
+          <p>Scroll down to load more upcoming campus events...</p>
+        </div>
+        <div id="infiniteScrollTrigger" style="height: 1px; width: 100%;"></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+              <div class="brand-icon">N</div>
+              <span>NexusArena</span>
+            </a>
+            <p style="font-size: 0.875rem; max-width: 320px; color: var(--text-secondary); margin-bottom: 1rem;">
+              Collegiate Esports & Tech League event ticketing and tournament bracket registration.
+            </p>
+            <div style="font-size: 0.8rem; color: var(--text-muted);">
+              Vanilla JavaScript Dynamic Filtering & Infinite Scrolling
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Home</a></li>
+              <li><a href="about.html" class="footer-link">About Organization</a></li>
+              <li><a href="events.html" class="footer-link">All Events</a></li>
+              <li><a href="contact.html" class="footer-link">Registration Desk</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Account Access</h4>
+            <ul class="footer-links">
+              <li><a href="login.html" class="footer-link">Member Sign In</a></li>
+              <li><a href="signup.html" class="footer-link">Register New Account</a></li>
+              <li><a href="forgot-password.html" class="footer-link">Forgot Password</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Venue Desk</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+              Main Campus Arena & Esports Complex<br>
+              Direct Line: (555) 019-4820<br>
+              Email: tickets@campus-arena.edu
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© <span id="currentYear">2026</span> NexusArena University Platform.</div>
+          <div style="display: flex; gap: 1.5rem;">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="events.html" class="footer-link">Events</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/events.js"></script>
+  </body>
+</html>
